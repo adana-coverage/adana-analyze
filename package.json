@@ -1,0 +1,30 @@
+{
+  "name": "adana-analyze",
+  "version": "0.1.0",
+  "description": "Make sense of adana data.",
+  "repository": "izaakschroeder/adana-analyze",
+  "license": "CC0-1.0",
+  "main": "dist/index.js",
+  "keywords": [
+    "coverage",
+    "istanbul",
+    "adana"
+  ],
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint --ignore-path .gitignore .",
+    "prepublish": "./node_modules/.bin/babel -s inline -d dist src/",
+    "spec": "NODE_ENV=test ./node_modules/.bin/_mocha --slow 200 --compilers js:babel-core/register -R spec test/spec",
+    "test": "npm run lint && npm run spec"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.0.2",
+    "babel-plugin-syntax-object-rest-spread": "^6.0.2",
+    "babel-plugin-transform-object-rest-spread": "^6.0.2",
+    "babel-preset-es2015": "^6.0.11",
+    "babylon": "^6.3.26",
+    "chai": "^3.4.0",
+    "eslint": "^1.8.0",
+    "eslint-config-metalab": "^0.3.0",
+    "mocha": "^2.2.5"
+  }
+}
