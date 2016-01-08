@@ -1,9 +1,8 @@
-
 /**
  * Generate a tag index from coverage data. This creates an object whose keys
  * are tags and whose values are arrays containing locations.
- * @param {Object} coverage Coverage data.
- * @returns {Object} Tag index.
+ * @param {Object} locations Existing coverage data locations.
+ * @returns {Object} Locations grouped by tag.
  */
 export default function tags(locations) {
   const tags = { };

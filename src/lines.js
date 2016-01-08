@@ -1,11 +1,12 @@
 /**
- * [lines description]
- * @param   {[type]} statements [description]
- * @returns {[type]}            [description]
+ * Compute information about line coverage given a list of instrumented
+ * locations.
+ * @param {Array} locations Existing coverage data locations.
+ * @returns {Array} Array of line data.
  */
-export default function lines(statements) {
+export default function lines(locations) {
   const index = { };
-  statements.forEach(entry => {
+  locations.forEach(entry => {
     for (let i = entry.loc.start.line; i <= entry.loc.end.line; ++i) {
       // If a statement hasn't been covered ensure the line is marked as
       // not covered.

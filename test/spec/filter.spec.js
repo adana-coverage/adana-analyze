@@ -2,7 +2,6 @@ import path from 'path';
 import { readFileSync } from 'fs';
 import { expect } from 'chai';
 
-import tags from '../../src/tags';
 import filter from '../../src/filter';
 
 const fixture = path.join(__dirname, '/../fixture/coverage.json');

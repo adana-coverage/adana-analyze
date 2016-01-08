@@ -3,7 +3,7 @@
  * coverage data should be included or excluded. The rules list is an array of
  * { "rule": "include|exclude", "tag": "sometag" } and the last rule always
  * takes precedence when analyzing a statement.
- * @param {Object} coverage Existing coverage data.
+ * @param {Array} locations Existing coverage data locations.
  * @param {Array} rules List of rules.
  * @returns {Object} New coverage data.
  */
