@@ -21,3 +21,9 @@ it('should use locations as values from the coverage data', () => {
   expect(result.line).to.be.an.instanceof(Array);
   expect(result.line).to.have.property('length', 99);
 });
+
+it('should select non-existant tags as empty arrays', () => {
+  const result = tags(coverage.locations, [ 'foo' ]);
+  expect(result.foo).to.be.an.instanceof(Array);
+  expect(result.foo).to.have.property('length', 0);
+});
