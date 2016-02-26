@@ -4,12 +4,13 @@
  * @returns {Object} Computed information.
  */
 export default function metrics(locations) {
+  const total = locations.length;
   const covered = locations.reduce((sum, { count }) => {
     return (count > 0) ? sum + 1 : sum;
   }, 0);
   return {
-    value: covered / locations.length,
+    value: total ? covered / total : 1,
     passed: covered,
-    total: locations.length,
+    total,
   };
 }
