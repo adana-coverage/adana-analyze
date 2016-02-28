@@ -14,12 +14,10 @@ export default function tags(locations, select) {
   }
   locations.forEach(location => {
     location.tags.forEach(tag => {
-      if (!tagIndex.hasOwnProperty(tag)) {
-        if (!select) {
-          tagIndex[tag] = [];
-          tagIndex[tag].push(location);
-        }
-      } else {
+      if (tagIndex.hasOwnProperty(tag)) {
+        tagIndex[tag].push(location);
+      } else if (!select) {
+        tagIndex[tag] = [];
         tagIndex[tag].push(location);
       }
     });
