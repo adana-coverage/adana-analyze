@@ -10,5 +10,5 @@ const coverage = data['src/instrumenter.js'];
 
 it('should calculate correct lines', () => {
   const result = lines(coverage.locations);
-  expect(result).to.have.property('length', 457);
+  expect(result).to.have.property('length', 299);
 });
