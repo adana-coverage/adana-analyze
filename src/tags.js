@@ -6,23 +6,21 @@
  * @returns {Object} Locations grouped by tag.
  */
 export default function tags(locations, select) {
-  const tags = { };
+  const tagIndex = { };
   if (select) {
     select.forEach(entry => {
-      tags[entry] = [];
+      tagIndex[entry] = [];
     });
   }
   locations.forEach(location => {
     location.tags.forEach(tag => {
-      if (!(tag in tags)) {
-        if (!select) {
-          tags[tag] = [];
-          tags[tag].push(location);
-        }
-      } else {
-        tags[tag].push(location);
+      if (tagIndex.hasOwnProperty(tag)) {
+        tagIndex[tag].push(location);
+      } else if (!select) {
+        tagIndex[tag] = [];
+        tagIndex[tag].push(location);
       }
     });
   });
-  return tags;
+  return tagIndex;
 }

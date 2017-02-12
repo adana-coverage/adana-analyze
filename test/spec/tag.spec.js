@@ -27,3 +27,8 @@ it('should select non-existant tags as empty arrays', () => {
   expect(result.foo).to.be.an.instanceof(Array);
   expect(result.foo).to.have.property('length', 0);
 });
+
+it('should not treat inherited properties as tags', () => {
+  const locationsWithNameCollisions = [ {tags: [ 'constructor' ]} ];
+  expect(() => tags(locationsWithNameCollisions, [])).to.not.throw();
+});
